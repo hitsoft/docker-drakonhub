@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+
+  drakonhub:
+    build: .
+    restart: always
+    ports:
+    - 8090:8090
+    volumes:
+    - ./onprem.lua:/dewt/app/onprem.lua
+    - ./data:/dewt/data
