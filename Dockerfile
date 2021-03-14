@@ -20,11 +20,6 @@ WORKDIR /root
 RUN wget -O drakon_editor.zip https://sourceforge.net/projects/drakon-editor/files/drakon_editor1.31.zip/download
 RUN unzip drakon_editor.zip -d drakon_editor
 
-WORKDIR /
-RUN git clone https://github.com/stepan-mitkin/drakonhub.git drakonhub
-WORKDIR /drakonhub
-RUN chmod +x static/drnjs app/drnlua
-RUN ./build
 
 # Installing Tarantool
 # https://www.tarantool.io/en/download/os-installation/ubuntu/
@@ -77,7 +72,15 @@ RUN chown -R tarantool /dewt
 WORKDIR /dewt/app
 RUN tarantoolctl rocks install http
 
+RUN echo 1
+
 # Make a release zip
+WORKDIR /
+RUN git clone --branch hitsoft --depth 1 https://github.com/hitsoft/drakonhub.git drakonhub
+WORKDIR /drakonhub
+RUN chmod +x static/drnjs app/drnlua
+RUN ./build
+
 WORKDIR /drakonhub/scripts
 RUN ./deploy /tmp/*.zip
 
