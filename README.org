@@ -8,4 +8,5 @@ drakonhub.com selfhosted server wrapped in the docker container
 Copy the ~onprem.lua.example~ to ~onprem.lua~ and customize it as you need
 
 ** Run
-Just perform the ~docker-compose up~ to build and run your own drakonhub.com instance
+Just perform the ~docker-compose up~ to build and run your own drakonhub.com instance that will be available at [[http://localhost:8090]]
+
