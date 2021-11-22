@@ -10,3 +10,4 @@ services:
     volumes:
     - ./onprem.lua:/dewt/app/onprem.lua
     - ./data:/dewt/data
+

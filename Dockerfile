@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
   libtk-img \
   unzip \
   wget \
-  openjdk-14-jre-headless \
+  default-jre-headless \
   zip
 
 WORKDIR /root
@@ -75,7 +75,7 @@ RUN chown -R tarantool /dewt
 # Install tarantool-http
 # https://github.com/tarantool/http#installation
 WORKDIR /dewt/app
-RUN tarantoolctl rocks install http
+RUN tarantoolctl rocks install http-v2-legacy
 
 # Make a release zip
 WORKDIR /drakonhub/scripts
