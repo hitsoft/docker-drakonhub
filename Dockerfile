@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
   libtk-img \
   unzip \
   wget \
-  openjdk-14-jre-headless \
+  default-jre-headless \
   zip
 
 WORKDIR /root
