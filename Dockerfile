@@ -70,7 +70,7 @@ RUN chown -R tarantool /dewt
 # Install tarantool-http
 # https://github.com/tarantool/http#installation
 WORKDIR /dewt/app
-RUN tarantoolctl rocks install http
+RUN tarantoolctl rocks install http-v2-legacy
 
 RUN echo 1
 
